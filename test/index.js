@@ -15,4 +15,4 @@ var sinonChai = require('sinon-chai');
 global.chai.should();
 global.chai.use(sinonChai);
 
-require('./');
+require('./'); // Run the tests.
