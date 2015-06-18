@@ -3,36 +3,30 @@
 
 var Select = require('../src/Select');
 
-describe('Select test', function() {
+describe('Select component with a name option', function() {
 	jsdom();
 
-	var options, instance;
-
-	function logChange(val) {
-		console.log('Selected: ' + val);
-	}
+	var props, instance;
 
 	beforeEach(function() {
 
-		options = [
-			{ value: 'one', label: 'One' },
-			{ value: 'two', label: 'Two' }
-		];
+		props = {
+			name: 'form-field-name',
+			value: 'one',
+			options: [
+				{ value: 'one', label: 'One' },
+				{ value: 'two', label: 'Two' }
+			],
+			onChange: sinon.spy()
+		};
 
-		// Render an instance of the component
-		instance = TestUtils.renderIntoDocument(
-			<Select
-				name="form-field-name"
-				value="one"
-				options={options}
-				onChange={logChange}/>
-		);
+		instance = TestUtils.renderIntoDocument(<Select {...props}/>);
 
 	});
 
 	it('should assign the given name', function() {
 		var selectInputElement = TestUtils.scryRenderedDOMComponentsWithTag(instance, 'input')[0];
-		expect(selectInputElement.getDOMNode().name).to.equal('form-field-name');
+		expect(selectInputElement.getDOMNode().name).to.equal(props.name);
 	});
 
 });
