@@ -52,7 +52,7 @@
     "examples": "gulp dev:server",
     "lint": "eslint .",
     "release": "gulp release",
-    "test": "mocha --compilers js:babel/register",
+    "test": "mocha --require test/index.js --compilers js:babel/register",
     "cover": "istanbul cover node_modules/.bin/_mocha -- -u exports --compilers js:babel/register -R spec",
     "watch": "gulp watch:lib"
   },

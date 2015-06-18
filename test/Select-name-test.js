@@ -1,14 +1,5 @@
 'use strict';
-/* global describe, it, beforeEach */
-
-var jsdom = require('mocha-jsdom');
-var chai = require('chai');
-var expect = chai.expect;
-
-chai.should();
-
-var React = require('react/addons');
-var TestUtils = React.addons.TestUtils;
+/* global React, jsdom, TestUtils, expect, describe, it, beforeEach */
 
 var Select = require('../src/Select');
 

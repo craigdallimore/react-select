@@ -1,17 +1,5 @@
 'use strict';
-/* global describe, it, beforeEach */
-
-var jsdom = require('mocha-jsdom');
-var chai = require('chai');
-var sinon = require('sinon');
-var sinonChai = require('sinon-chai');
-var expect = chai.expect;
-
-chai.should();
-chai.use(sinonChai);
-
-var React = require('react/addons');
-var TestUtils = React.addons.TestUtils;
+/* global React, sinon, jsdom, TestUtils, expect, describe, it, beforeEach */
 
 var Value = require('../src/Value');
 
